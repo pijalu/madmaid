@@ -72,17 +72,7 @@ GitHub Actions CI builds Linux, macOS, and Windows binaries for amd64 and arm64 
 
 ## GitHub Pages hosting
 
-Pages can host the frontend as a static website. The deployment workflow publishes `dist/` from the `main` branch to GitHub Pages. It builds with the repository subpath (`/madmaid/`), which is needed for a project Pages URL. The same workflow can be run manually from Actions.
-
-One-time repository setup:
-
-1. Push the repository to GitHub.
-2. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source.
-3. Ensure the default deployment branch is `main` (or update workflow branch filters if different).
-4. Push to `main`, or manually run **Deploy GitHub Pages** in Actions.
-5. Find the published URL under **Settings → Pages**; it is typically `https://pijalu.github.io/madmaid/`.
-
-Pages deployment and native executable builds are separate jobs. Pages runs the Vite build with a `/madmaid/` base path; executable jobs build Vite assets at `/` before embedding them. A static Pages deployment does not run the Go server.
+The static frontend is available at [https://pijalu.github.io/madmaid/](https://pijalu.github.io/madmaid/). The deployment workflow publishes `dist/` from the `main` branch. Pages deployment and native executable builds are separate jobs; Pages uses the `/madmaid/` base path, while executable builds embed assets at `/`. A static Pages deployment does not run the Go server.
 
 ## Releases and CI
 
